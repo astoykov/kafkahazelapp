@@ -1,0 +1,10 @@
+
+CREATE TABLE IF NOT EXISTS USERS (
+	id			INTEGER PRIMARY KEY,
+    name		VARCHAR(20) NOT NULL,
+	companyId	VARCHAR(20),
+	email		VARCHAR(20),
+	address		VARCHAR(20) NOT NULL,
+	company		VARCHAR(20)
+);
+

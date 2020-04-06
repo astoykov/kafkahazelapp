@@ -1,0 +1,34 @@
+spring:
+  kafka:
+    consumer:
+      group-id: tpd-loggers
+      auto-offset-reset: earliest
+    # change this property if you are using your own
+    # Kafka cluster or your Docker IP is different
+    bootstrap-servers: localhost:9092
+    
+  datasource:
+    continue-on-error: true
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    password: ''
+    url:  'jdbc:hsqldb:hsql://localhost/mydatabase'
+    username: 'SA'
+
+# Configuration for Hazelcast
+hazelcast:
+  group:
+    name: 'jsongrid'
+  network:
+    port:
+      port: 9701
+    join:
+      multicast:
+        enabled: false
+      tcp-ip:
+        enabled: true
+        member-list:
+          - 127.0.0.1:9701
+          
+kafkahazel:
+  topic-name: users-topic
+
