@@ -19,10 +19,6 @@ public class HazelcastController {
     @RequestMapping("/write")
    public String write(@RequestParam("id")String id, @RequestParam("json")String json) {
         
-    	json = "{\"employeeId\":\"101\",\"name\":\"Andrew Price\",\"companyId\":\"B1\",\"email\":\"andrew@bank.inc\",\"address\":\"123 Road Str\",\"company\":\"Bank Inc\",\"id\":\"101\"}";
-    	
-    	System.out.println("WRITE : " + id + " : " + json);
-    	
     	HazelcastJsonValue value = new HazelcastJsonValue(json);
     	
     	java.util.Map<Integer,HazelcastJsonValue> stringStringMap = instance.getMap("users");    // get map from hazelcast
