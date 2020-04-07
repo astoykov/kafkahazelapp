@@ -68,6 +68,7 @@ public class KafkaExampleApplication {
         myMapStoreConfig.setFactoryImplementation(myMapLoaderFactory);
         myMapStoreConfig.setWriteCoalescing(false);
         myMapStoreConfig.setWriteBatchSize(1);
+        
 
         defaultMapConfig.setMapStoreConfig(myMapStoreConfig);
 

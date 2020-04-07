@@ -1,11 +1,14 @@
 package com.alesto.kafkahazel;
 
+import com.alesto.kafkahazel.database.MyJsonMapLoader;
+import com.alesto.kafkahazel.database.MyMapListener;
 import com.hazelcast.core.HazelcastInstance;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -43,7 +46,7 @@ public class ApplicationInitializer implements CommandLineRunner {
 	
     @Autowired
     private HazelcastInstance hazelcastInstance;
-
+    
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -76,7 +79,10 @@ public class ApplicationInitializer implements CommandLineRunner {
 
                 log.debug(" --> '{}'.get('{}')=='{}'" + 
                         iMap.getName() + "   " +  key + " : " + value);
+                
             }
+            
+            
         });
     }
 
